@@ -1,0 +1,42 @@
+{
+    "industries" : {
+        "bz" : {
+            "name": "标准版",
+            "categories": ["日常办公", "审批申请", "客户管理", "财务管理"]
+        },
+        "zj" : {
+            "name": "中介版",
+            "categories": ["日常办公", "客户管理", "财务管理", "房源管理"]
+        },
+        "qy" : {
+            "name": "企业版",
+            "categories": ["日常办公", "客户管理", "财务管理", "终端上报"]
+        },
+        "kx" : {
+            "name": "快销版",
+            "categories": ["日常办公", "客户管理", "财务管理", "终端上报", "进存销管理"]
+        }
+    },
+    // 127.0.0.1:8080 http://jhapp.sanfanerp.com:8080（线上） apptest.sanfanerp.com:8080（测试环境）
+    // tradeApiUrl:  http://api.sanfanerp.com（线上）   apitest.sanfanerp.com（测试环境）
+    "server" : {
+        "url" : "http://192.168.0.108:8080",
+        "tradeApiUrl": "http://apitest.sanfanerp.com"
+    },
+    "amap": {
+        "comment": "Mind that you must also specify amap key when installing amap SDK as cordova plugin",
+        "key": "b5d1149a49d966fce91b1699e563e298"
+    },
+    "ocr": {
+        "appCode": "29cc7f7f69df4c6da6ec78982578dc9b"
+    },
+    "trace": {
+        "interval": 60000,
+        "minOffset": 100,
+        "accuracy": 600
+    },
+    "rongAppKey": "z3v5yqkbzi4u0",
+    "version": "1.2.1",
+    "versionCode": 1,
+    "vConsole": false
+}

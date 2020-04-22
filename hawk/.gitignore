@@ -1,0 +1,14 @@
+# ignore build artifacts folder
+platforms/
+
+.vscode/
+node_modules/
+.idea/
+www/*
+!www/.gitkeep
+
+/plugins/*
+
+.DS_Store
+
+package-lock.json

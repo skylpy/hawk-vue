@@ -1,0 +1,50 @@
+{
+  "_from": "git+https://github.com/huangliop/cordova-plugin-xgpush-hl.git",
+  "_id": "cordova-plugin-xgpush@4.2.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-xgpush",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/huangliop/cordova-plugin-xgpush-hl.git",
+    "rawSpec": "https://github.com/huangliop/cordova-plugin-xgpush-hl.git",
+    "saveSpec": "git+https://github.com/huangliop/cordova-plugin-xgpush-hl.git",
+    "fetchSpec": "https://github.com/huangliop/cordova-plugin-xgpush-hl.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/huangliop/cordova-plugin-xgpush-hl.git#9124cd99d1f27a5629cd7c336b393bca08434b66",
+  "_spec": "https://github.com/huangliop/cordova-plugin-xgpush-hl.git",
+  "_where": "D:\\work\\hawk",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/huangliop/cordova-plugin-xgpush-hl/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-xgpush",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "腾讯信鸽推送服务：http://xg.qq.com/",
+  "homepage": "https://github.com/huangliop/cordova-plugin-xgpush-hl#readme",
+  "keywords": [
+    "cordova",
+    "xgpush",
+    "push"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-xgpush",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangliop/cordova-plugin-xgpush-hl.git"
+  },
+  "version": "4.2.0"
+}

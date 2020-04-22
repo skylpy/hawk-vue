@@ -1,0 +1,271 @@
+$primary_color: #01B38B;
+
+.input-textarea{
+    .item-inner {
+        display: block !important;
+    }
+    textarea {
+        width: 100%;
+        height: 100px;
+        text-align: left;
+    }
+}
+
+.input-photo {
+    .item-inner {
+        display: block !important;
+    }
+}
+
+.item-divider {
+    height: 15px !important;
+}
+
+.ios a {
+    color: $primary_color;
+}
+
+.ios .navbar .right {
+    font-size: 15px;
+}
+
+.ios div.hawk-action-btn-float > a {
+    background: $primary_color;
+}
+
+.ios .toolbar {
+    height: 50px;
+}
+
+.ios .icon-back {
+    background-image: url('../images/arrow_return_gray@2x.png')
+}
+
+.ios .hawk-button {
+    background: #01B38B;
+    border: 1px solid #01B38B;
+    border-radius: 5px;
+    color: white;
+
+    &.hawk-button-invalid {
+        background: rgba(216,216,216,1);
+        border: 1px solid rgba(216,216,216,1);
+    }
+}
+
+.hawk-avatar-normal {
+    width: 35px;
+    height: 35px;
+    float: right;
+}
+
+.ios .hawk-footnote {
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding-left: 15px;
+    background: white;
+    box-sizing: border-box;
+
+    font: {
+        size: 14px;
+        weight: 500;
+    }
+
+    border-top: solid 1px rgba(216,216,216,1);
+
+    & > div {
+        flex-grow: 1;
+    }
+}
+
+.ios .hawk-table {
+    font-size: 14px;
+    margin-top: 0;
+
+    .item-content {
+        padding-left: 0;
+    }
+
+    .hawk-table-grouptitle {
+        border-left: solid 5px $primary_color;
+        padding-left: 15px;
+        font-weight: 500;
+    }
+
+    .hawk-table-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: 400;
+        color: rgba(102,102,102,1);
+        padding-left: 10px;
+
+        &.hawk-table-caption {
+            font-weight: 600;
+            color: black;
+        }
+
+        &.hawk-table-nodata {
+            color: gray;
+        }
+
+        & > div {
+            min-width: 80px;
+        }
+    }
+
+    .hawk-card-caption {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 15px;
+        width: 100%;
+        font-weight: 500;
+
+        & > div:nth-of-type(1) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    .hawk-card-content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 15px;
+        margin-top: 10px;
+        color: #999999;
+
+        & div {
+            flex-basis: 50%;
+        }
+
+        & > .hawk-card-button {
+            margin-top: 26px;
+            margin-bottom: 10px;
+            color: $primary_color;
+        }
+    }
+
+    .hawk-input-label {
+        padding-left: 15px;
+        position: relative;
+        color: rgba(102,102,102,1);
+
+        .hawk-input-label-mandatory {
+            color: red;
+            position: absolute;
+            left: 5px;
+        }
+    }
+
+    input {
+        text-align: right;
+    }
+
+}
+
+.ios .hawk-org {
+    font-size: 14px;
+    margin-top: 0;
+
+    .item-content {
+        padding-left: 0px;
+
+        .item-inner {
+            padding-left: 15px;
+        }
+    }
+
+    .hawk-org-reminder {
+        background-color: #FFF5E4;
+        color: #F96A0E;
+    }
+
+    .hawk-org-department-nav {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+
+        & a:not(:last-child):after {
+            content: " > ";
+            padding: 0 5px 0 5px;
+            color: #CDCDCD;
+        }
+
+        & a:last-child {
+            color: currentColor;
+            text-decoration: none;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+
+    .hawk-org-user-container {
+        display: flex;
+        align-items: center;
+
+        & > * {
+            margin-right: 10px;
+        }
+
+        .hawk-org-user-avatar {
+            width:20px;
+            height:20px
+        }
+
+        .hawk-org-user-title {
+            color: #999999;
+            font-size: smaller;
+        }
+
+        .hawk-org-user-admin {
+            font-size: 10px;
+            padding: 0 2px 0 2px;
+            color: $primary_color;
+            border: solid 1px $primary_color;
+        }
+    }
+}
+
+.ios .hawk-org-toolbar {
+    font-size: 14px;
+
+    a.link {
+        flex-grow: 1;
+
+        &.hawk-org-toolbar-divider {
+            min-width: 0;
+            min-height: 0;
+            height: 14px;
+            width: 1px;
+            background: rgba(216,216,216,1);
+            flex-grow: 0;
+        }
+    }
+}
+
+.ios .hawk-action-button-bottom {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    transform: translate3d(0,0,0);  // force GPU acceleration
+
+    .list-button {
+        background-color: $primary_color !important;
+        color: white !important;
+    }
+}
+
+.ios .hawk-actions-button {
+    color: $primary_color;
+}
+
+.ios .searchbar-disable-button{
+    color: #01B38B!important;
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-xgpush" version="4.2.0">
+  <name>cordova-plugin-xgpush</name>
+  <description>Tencent XGPush Plugin</description>
+  <license>MIT</license>
+  <author>sunlu</author>
+  <keywords>cordova, push, chinese,xgpush</keywords>
+  <repo>https://github.com/sunlu/cordova-plugin-xgpush.git</repo>
+  <issue>https://github.com/sunlu/cordova-plugin-xgpush/issues</issue>
+
+  <preference name="ACCESS_ID" />
+  <preference name="ACCESS_KEY" />
+  <preference name="IOS_ACCESS_ID" />
+  <preference name="IOS_ACCESS_KEY" />
+
+  <js-module name="xgpush" src="www/xgpush.js">
+    <clobbers target="xgpush" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <hook type="after_plugin_add" src="scripts/after_plugin_add.js" />
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="XGPush">
+        <param name="android-package" value="net.sunlu.xgpush.XGPushPlugin" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest" mode="merge">
+      <uses-permission android:name="android.permission.GET_TASKS"/>
+      <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE" />
+      <permission android:name="com.sanfanerp.hawk.push.permission.MESSAGE" android:protectionLevel="signature"/>
+      <uses-permission android:name="com.sanfanerp.hawk.push.permission.MESSAGE" />
+      <!--  兼容flyme3.0配置权限-->
+      <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
+      <permission android:name="com.sanfanerp.hawk.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+      <uses-permission android:name="com.sanfanerp.hawk.permission.C2D_MESSAGE"/>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
+      <service android:name="com.meizu.cloud.pushsdk.NotificationService" android:exported="true"/>
+      <receiver android:name="com.meizu.cloud.pushsdk.SystemReceiver" >
+        <intent-filter>
+          <action android:name="com.meizu.cloud.pushservice.action.PUSH_SERVICE_START"/>
+          <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+      </receiver>
+
+      <receiver android:name="com.tencent.android.mzpush.MZPushMessageReceiver">
+        <intent-filter>
+          <!-- 接收push消息 -->
+          <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+          <!-- 接收register消息-->
+          <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK"/>
+          <!-- 接收unregister消息-->
+          <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK"/>
+          <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+          <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+          <category android:name="com.sanfanerp.hawk" />
+        </intent-filter>
+      </receiver>
+    </config-file>
+
+    <source-file src="src/android/XGPushPlugin.java" target-dir="src/net/sunlu/xgpush" />
+    <source-file src="src/android/XGPushReceiver.java" target-dir="src/net/sunlu/xgpush" />
+    <source-file src="src/android/XGPushCallback.java" target-dir="src/net/sunlu/xgpush" />
+    <!-- Tencent XGPush SDK  -->
+   <framework src="sdk/android/build-extras.gradle" custom="true" type="gradleReference" />
+  </platform>
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="XGPush">
+        <param name="ios-package" value="CDVXGPushPlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <config-file target="*-Info.plist" parent="XGPushMeta">
+      <dict>
+        <key>AccessID</key>
+        <integer>$IOS_ACCESS_ID</integer>
+        <key>AccessKey</key>
+        <string>$IOS_ACCESS_KEY</string>
+      </dict>
+    </config-file>
+    <!-- Tencent XGPush SDK -->
+    <header-file src="sdk/ios/XGPush.h" />
+    <source-file src="sdk/ios/libXG-SDK.a" framework="true" />
+    <!-- Cordova Plugin -->
+    <header-file src="src/ios/AppDelegate+CDVXGPush.h" />
+    <source-file src="src/ios/AppDelegate+CDVXGPush.m" />
+    <header-file src="src/ios/CDVXGPushPlugin.h" />
+    <source-file src="src/ios/CDVXGPushPlugin.m" />
+    <!-- Dependencies -->
+    <framework src="libz.tbd" />
+    <framework src="libsqlite3.0.tbd" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="CoreTelephony.framework" />
+    <framework src="UserNotifications.framework" />
+  </platform>
+</plugin>

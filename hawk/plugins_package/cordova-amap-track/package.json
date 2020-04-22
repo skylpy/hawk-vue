@@ -1,0 +1,33 @@
+{
+  "author": {
+    "name": "sanfanerp"
+  },
+  "bugs": {
+    "url": "https://github.com/sanfanerp/cordova-amap-track/issues"
+  },
+  "cordova": {
+    "id": "cordova-amap-track",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Location Plugin By AMap",
+  "homepage": "https://github.com/sanfanerp/cordova-amap-track#readme",
+  "keywords": [
+    "cordova",
+    "location",
+    "高德",
+    "geolocation",
+    "amap",
+    "track"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-amap-track",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanfanerp/cordova-amap-track.git"
+  },
+  "version": "1.0.1"
+}

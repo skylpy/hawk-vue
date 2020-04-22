@@ -1,0 +1,47 @@
+repositories {
+    jcenter(){url 'http://jcenter.bintray.com/'}
+}
+ext.cdvMinSdkVersion = 20
+project.ext {
+    defaultMinSdkVersion=20
+}
+android {
+    defaultConfig {
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a','x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                XG_ACCESS_ID: "2100332979",
+                XG_ACCESS_KEY : "AS47RJ68M1QJ",
+                PACKAGE_NAME: "com.sanfanerp.hawk",
+                HW_APPID: "100646117"
+        ]
+    }
+}
+
+dependencies {
+    // implementation 'com.tencent.xinge:xinge:4.2.0-beta'
+    // jg包
+    // implementation 'com.tencent.jg:jg:1.1'
+    // wup包
+    // implementation 'com.tencent.wup:wup:1.0.0.E-release'
+    // mid包
+    // implementation 'com.tencent.mid:mid:4.0.7'
+    //开启厂商通道，请删除上面的引用，加入下面的引用
+//    implementation 'com.tencent.xinge:xinge:3.2.6-release'
+//    implementation 'com.tencent.jg:jg:1.1'
+//    implementation 'com.tencent.wup:wup:1.0.0.E-release'
+//    implementation 'com.tencent.mid:mid:4.0.6-release'
+//    implementation 'com.tencent.xinge:mipush:3.2.6-release'
+//    implementation 'com.tencent.xinge:xghw:3.2.6-release'
+//    implementation 'com.tencent.xinge:xgmz:3.2.6-release'
+
+    implementation 'com.tencent.xinge:xinge:4.3.2-beta'
+    implementation  'com.tencent.wup:wup:1.0.0.E-Release'
+    implementation 'com.tencent.jg:jg:1.1'
+    implementation 'com.tencent.mid:mid:4.0.7-Release'
+    implementation 'com.tencent.xinge:mipush:4.3.2-xiaomi-release'
+//  implementation 'com.tencent.xinge:xgmz:4.3.2-meizu-beta'
+    implementation 'com.tencent.xinge:xghw:4.3.2-huawei-beta'
+    implementation 'com.tencent.xinge:xgmz:3.2.6-release'
+}
